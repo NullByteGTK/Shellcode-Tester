@@ -47,7 +47,8 @@ int main(){
 	}
 
 	printf("Shellcode address: %p - Length:%llu\n",shellcode,(length/4)); //Prints shellcode's address on heap + its length
-	(*(void(*)()) shellcode)(); //Calls shellcode 
+	(*(void(*)()) shellcode)(); //Calls shellcode
+	free(shellcode);
 	return 0;
 }
 
